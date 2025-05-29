@@ -1,0 +1,12 @@
+{% extends "weather/base.html" %}
+
+{% block title %}Edit Weather{% endblock %}
+
+{% block content %}
+<h2>Edit Weather Report for {{ weather.city }}</h2>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Update</button>
+</form>
+{% endblock %}

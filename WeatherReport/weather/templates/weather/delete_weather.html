@@ -1,0 +1,12 @@
+{% extends "weather/base.html" %}
+
+{% block title %}Delete Weather{% endblock %}
+
+{% block content %}
+<h2>Are you sure you want to delete {{ weather.city }}?</h2>
+<form method="POST">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a href="/" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends "weather/base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<h2>Weather Reports</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>City</th>
+            <th>Temperature</th>
+            <th>Condition</th>
+            <th>Humidity</th>
+            <th>Wind Speed</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for weather in weather_data %}
+        <tr>
+            <td>{{ weather.city }}</td>
+            <td>{{ weather.temperature }}°C</td>
+            <td>{{ weather.condition }}</td>
+            <td>{{ weather.humidity }}%</td>
+            <td>{{ weather.wind_speed }} km/h</td>
+            <td>
+                <a href="/edit-weather/{{ weather.id }}/" class="btn btn-warning btn-sm">Edit</a>
+                <a href="/delete-weather/{{ weather.id }}/" class="btn btn-danger btn-sm">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
