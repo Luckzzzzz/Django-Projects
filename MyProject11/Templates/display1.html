@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Best Player Details</title>
+</head>
+<body>
+    <h1>Best Player Details</h1>
+
+    <!-- Display best goalkeeper if exists -->
+    {% if goalkeeper %}
+        <h2>Best Goalkeeper</h2>
+        <p>Name:{{ goalkeeper.name }}</p>
+        <p>ID: {{ goalkeeper.id1 }}</p>
+        <p>Player Type:{{ goalkeeper.player_type }}</p>
+        <p>Matches Played: {{ goalkeeper.count }}</p>
+        <p>Total Stopping Shots: {{ goalkeeper.total_stopping_shots }}</p>
+        <p>Stop Rate:{{ stop_rate|floatformat:2 }}</p>
+    {% else %}
+        <p>No goalkeeper found.</p>
+    {% endif %}
+
+    <!-- Display best field player if exists -->
+    {% if fieldplayer %}
+        <h2>Best Field Player</h2>
+        <p>Name:{{ fieldplayer.name }}</p>
+        <p>ID: {{ fieldplayer.id1 }}</p>
+        <p>Player Type: {{ fieldplayer.player_type }}</p>
+        <p>Matches Played:{{ fieldplayer.count }}</p>
+        <p>Goals Scored: {{ fieldplayer.goal_count }}</p>
+    {% else %}
+        <p>No field player found.</p>
+    {% endif %}
+</body>
+</html>

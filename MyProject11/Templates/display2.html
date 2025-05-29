@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Player Details</title>
+</head>
+<body>
+    <h1>Player Details</h1>
+            <h2>{{ player.name }}</h2>
+            <p>ID:{{ player.id1 }}</p>
+            <p>Player Type: {{ player.player_type }}</p>
+            <p>Matches Played:{{ player.count }}</p>
+
+            {% if player.player_type == "Goalkeeper" %}
+                <p>Total Stopping Shots:{{ player.total_stopping_shots }}</p>
+                <p>Stop Rate: {{ stop_rate}}</p>
+            {% elif player.player_type == "FieldPlayer" %}
+                <p>Goals Scored:{{ player.goal_count }}</p>
+            {% endif %}
+        </div>
+        <hr>
+    
+</body>
+</html>
